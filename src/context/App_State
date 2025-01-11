@@ -1,0 +1,213 @@
+// //rafce
+// import React, { useEffect, useState } from "react";
+// import { AppContext } from "./App_Context";
+// import axios from "axios";
+
+// const App_State = ({ children }) => {
+//   const url = "http://localhost:3000/api";
+//   const [token, settoken] = useState("");
+//   const [recipe, setrecipe] = useState([]);
+//   const [savedRecipe, setsavedRecipe] = useState([]);
+//   const [user, setuser] = useState([]);
+//   const [userId, setuserId] = useState("");
+//   const [userRecipe, setuserRecipe] = useState([]);
+
+//   useEffect(() => {
+//     const fetchRecipe = async () => {
+//       const api = await axios.get(
+//         `${url}/`,
+
+//         {
+//           headers: {
+//             "Content-Type": "application/json",
+//           },
+//           withCredentials: true,
+//         }
+//       );
+//       console.log(api.data.recipe);
+//       setrecipe(api.data.recipe);
+//     };
+//     fetchRecipe();
+//     getSavedRecipeById();
+
+//     recipeByUser(userId);
+//   }, [token, , userId]);
+
+//   useEffect(() => {
+//     if (token) {
+//       localStorage.setItem("token", token);
+//     }
+//     const tokenFromLocalStorage = localStorage.getItem("token");
+//     if (tokenFromLocalStorage) {
+//       settoken(tokenFromLocalStorage);
+//     }
+//   }, [token]);
+
+//   //register
+//   const register = async (name, gmail, password) => {
+//     const api = await axios.post(
+//       `${url}/register`,
+//       { name, gmail, password },
+//       {
+//         headers: {
+//           "Content-Type": "application/json",
+//         },
+//         withCredentials: true,
+//       }
+//     );
+
+//     return api;
+//   };
+
+//   //login
+//   const login = async (gmail, password) => {
+//     const api = await axios.post(
+//       `${url}/login`,
+//       { gmail, password },
+//       {
+//         headers: {
+//           "Content-Type": "application/json",
+//         },
+//         withCredentials: true,
+//       }
+//     );
+//     settoken(api.data.token);
+//     return api;
+//     // console.log("login data", api);
+//   };
+
+//   //addRecipe
+//   const addRecipe = async (
+//     title,
+//     inst,
+//     ing1,
+//     ing2,
+//     ing3,
+//     ing4,
+//     qty1,
+//     qty2,
+//     qty3,
+//     qty4,
+//     imgUrl
+//   ) => {
+//     const api = await axios.post(
+//       `${url}/add`,
+//       { title, inst, ing1, ing2, ing3, ing4, qty1, qty2, qty3, qty4, imgUrl },
+//       {
+//         headers: {
+//           "Content-Type": "application/json",
+//           Auth: token,
+//         },
+//         withCredentials: true,
+//       }
+//     );
+//     return api;
+//   };
+
+//   //get recipeById
+//   const getRecipeById = async (id) => {
+//     const api = await axios.get(
+//       `${url}/${id}`,
+
+//       {
+//         headers: {
+//           "Content-Type": "application/json",
+//         },
+//         withCredentials: true,
+//       }
+//     );
+//     return api;
+//   };
+
+//   //save recipeById
+//   const savedRecipeById = async (id) => {
+//     const api = await axios.post(
+//       `${url}/${id}`,
+//       {}, //in post method compolsory {}
+
+//       {
+//         headers: {
+//           "Content-Type": "application/json",
+//           Auth: token,
+//         },
+//         withCredentials: true,
+//       }
+//     );
+//     return api;
+//   };
+
+//   //get allsaved recipeById
+//   const getSavedRecipeById = async () => {
+//     const api = await axios.get(
+//       `${url}/saved`,
+
+//       {
+//         headers: {
+//           "Content-Type": "application/json",
+//         },
+//         withCredentials: true,
+//       }
+//     );
+//     console.log("getting saved recipe", api.data.recipe);
+//     setsavedRecipe(api.data.recipe);
+//     // return api;
+//   };
+
+//   //profile
+//   const profile = async () => {
+//     const api = await axios.get(
+//       `${url}/user`,
+
+//       {
+//         headers: {
+//           "Content-Type": "application/json",
+//           Auth: token,
+//         },
+//         withCredentials: true,
+//       }
+//     );
+
+//     console.log("user profile", api.data.user);
+//     setuser(api.data.user);
+//     setuserId(api.data.user._id);
+//   };
+
+//   //get recipe by userId
+//   const recipeByUser = async (id) => {
+//     const api = await axios.get(
+//       `${url}/user/${id}`,
+
+//       {
+//         headers: {
+//           "Content-Type": "application/json",
+//         },
+//         withCredentials: true,
+//       }
+//     );
+
+//     // console.log("user recipe", api);
+//     setuserRecipe(api.data.recipe);
+//   };
+
+//   return (
+//     <AppContext.Provider
+//       value={{
+//         login,
+//         register,
+//         addRecipe,
+//         recipe,
+//         getRecipeById,
+//         savedRecipeById,
+//         savedRecipe,
+//         userRecipe,
+//         user,
+
+        
+//       }}
+//     >
+//       {children}
+//     </AppContext.Provider>
+//   );
+// };
+
+// export default App_State;

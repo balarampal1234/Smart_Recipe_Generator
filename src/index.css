@@ -1,0 +1,164 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap");
+
+body {
+  /* White */
+
+
+  color: white ;
+  margin: 0;
+  font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.9) 0%, rgba(25, 25, 25, 0.9) 100%);
+  padding: 10px 20px;
+  z-index: 1000;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.left i {
+  font-size: 2rem;
+  padding-right: 10px;
+  position: relative;
+}
+
+.left h2 {
+  color: white;
+  font-size: 1.8rem;
+  margin: 0;
+}
+
+.tooltip {
+  visibility: hidden;
+  background-color: white;
+  color: black;
+  text-align: center;
+  padding: 5px;
+  border-radius: 4px;
+  position: absolute;
+  bottom: -25px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 12px;
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.left:hover .tooltip {
+  visibility: visible;
+  opacity: 1;
+}
+
+.right {
+  display: flex;
+  align-items: center;
+}
+
+.right a,
+.right div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 12px;
+  font-size: 1rem;
+  text-decoration: none;
+  color: white;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.right a:hover,
+.right div:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  transform: scale(1.05);
+}
+
+.right a {
+  margin: 0 5px;
+}
+
+.right .btn-danger {
+  cursor: pointer;
+}
+
+.right i {
+  font-size: 1.4rem;
+  margin-right: 5px;
+}
+
+.right .btn-success i {
+  margin-right: 5px;
+}
+
+.right .btn-success:hover {
+  background-color: #28a745;
+  color: white;
+}
+
+.right .btn-danger:hover {
+  background-color: #dc3545;
+  color: white;
+}
+
+.right .btn-primary:hover {
+  background-color: #007bff;
+  color: white;
+}
+
+.right .btn-warning:hover {
+  background-color: #ffc107;
+  color: black;
+}
+
+.right a.active {
+  background-color: rgba(255, 255, 255, 0.2);
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  .nav {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .right {
+    margin-top: 10px;
+    flex-wrap: wrap;
+  }
+
+  .right a,
+  .right div {
+    margin: 5px 0;
+  }
+}
+
+@media (max-width: 576px) {
+  .nav {
+    padding: 10px;
+  }
+
+  .right a,
+  .right div {
+    width: 100%;
+    margin: 5px 0;
+  }
+}

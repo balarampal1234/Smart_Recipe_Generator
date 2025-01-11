@@ -1,0 +1,205 @@
+/* General app styling */
+.app {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 24px;
+  min-height: 100vh;
+  background-color: rgba(0, 0, 0, 0.7); /* Background color for contrast */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.app::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('./components/bg.jpg.jpg'); /* Correct the path if necessary */
+  background-size: cover; 
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 1; /* Reduced opacity */
+  filter: brightness(1.2); /* Optional filter */
+  z-index: -1;
+}
+
+
+
+
+
+/* Search form styling */
+.app-searchForm {
+  margin-top: 18px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 500px;
+  background-color: rgb(214, 212, 212); /* Semi-transparent white */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); /* Slightly darker shadow for contrast */
+}
+
+/* Form group styling */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+/* Label styling */
+label {
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #000000; /* Change to black for better contrast */
+}
+
+/* Input styling */
+.app-input {
+  padding: 6px 16px;
+  min-width: 200px;
+  max-width: 100vw;
+  font-size: 15px;
+  border-radius: 5px;
+  border: 1px solid rgba(177, 165, 165, 0.932);
+  color: #000000; /* Keep input text color black */
+}
+
+/* Dropdown styling */
+.app-dropdown {
+  padding: 10px;
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 15px;
+  background-color: white;
+  color: #000000; /* Change dropdown text color to black */
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+.app-dropdown option {
+  padding: 10px;
+  color: #000000; /* Ensure dropdown options are black */
+}
+
+.app-dropdown:focus {
+  outline: none;
+  border-color: #02aff0;
+}
+
+/* Dropdown container for custom arrow */
+.dropdown-container {
+  position: relative;
+  margin-bottom: 15px;
+}
+
+.dropdown-container::after {
+  content: "▼";
+  font-size: 12px;
+  color: #333;
+  position: absolute;
+  top: 12px;
+  right: 10px;
+  pointer-events: none;
+}
+
+/* Remove default arrow in IE and Edge */
+.app-dropdown::-ms-expand {
+  display: none;
+}
+
+/* Submit button styling */
+.app-submit {
+  display: inline-block; 
+  padding: 8px 16px;
+  font-size: 15px;
+  background-color: #0ab9f9;
+  border: 2px solid #02aff0;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  margin-top: 10px;
+  margin-left: auto; /* Centers the button */
+  margin-right: auto; /* Centers the button */
+}
+
+.app-submit:hover {
+  background-color: white;
+  color: #02aff0;
+  border: 2px solid #02aff0;
+}
+
+/* Recipe grid */
+.app-recipe {
+  margin-top: 25px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 20px;
+  align-items: baseline;
+  width: 100%;
+  max-width: 1200px;
+}
+
+/* Spinner styling */
+.spinner {
+  margin-top: 50px;
+}
+
+/* Health labels dropdown styling */
+.app-healthLabels {
+  width: 250px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: white;
+  font-size: 15px;
+  color: #000000; /* Change dropdown text color to black */
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  max-height: 50px;
+  overflow-y: auto;
+}
+
+.app-healthLabels option {
+  padding: 10px;
+  color: black; /* Ensure dropdown options are black */
+}
+
+.app-healthLabels:focus {
+  outline: none;
+  border-color: #02aff0;
+}
+
+/* Paragraph Styles */
+.app-paragraph {
+  font-size: 16px;
+  color: white; /* Change to black for better visibility */
+  text-align: center;
+  margin: 20px 0;
+}
+
+/* Heading styling */
+.app-heading {
+  margin-bottom: 10px;
+  font-size: 40px;
+  color: white; /* Change heading text color to black */
+}
+
+/* No result message styling */
+.noresult {
+  font-size: 2.2rem;
+  color: white; /* Change to black */
+  text-align: center;
+  font-style: initial;
+  margin-top: 20px;
+  padding: 10px;
+}
